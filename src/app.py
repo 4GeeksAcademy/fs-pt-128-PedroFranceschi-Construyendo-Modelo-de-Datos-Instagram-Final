@@ -1,4 +1,4 @@
-"""
+""" 
 This module takes care of starting the API Server, Loading the DB and Adding the endpoints
 """
 import os
@@ -38,7 +38,8 @@ def sitemap():
 
 @app.route('/user', methods=['GET'])
 def handle_hello():
-
+    person = User.query.get(1)
+    print(person)
     response_body = {
         "msg": "Hello, this is your GET /user response "
     }
